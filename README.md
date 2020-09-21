@@ -21,6 +21,7 @@ Tras clonar el repositorio, desde el directorio daw_intro/lamp ejecutamos:
 Esto creará el container para el servicio lamp en docker-compose
 
 Este servicio:
+
 * Mapea el puerto 8081 del anfitrión al 80 del container
 * Asocia el directorio de datos de apache del container /var/www/html al volumen de datos docker apache_data
 * Asocia el directorio de datos de mysql del container /var/lib/mysql al volumen de datos docker mariadb_data
