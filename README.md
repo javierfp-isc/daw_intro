@@ -9,6 +9,7 @@ Tras clonar el repositorio, desde el directorio daw_intro/apache ejecutamos:
 Esto creará el container para el servicio apache en docker-compose
 
 Este servicio:
+
 * Mapea el puerto 8080 del anfitrión al 80 del container
 * Asocia el directorio de datos de apache del container /var/www/html al volumen de datos docker apache_data
 
