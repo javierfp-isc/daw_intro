@@ -8,7 +8,7 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin
 
 LABEL distribucion="Debian 10"
 LABEL descripcion="Imagen Debian para prácticas de DAW"
-LABEL paquetes="vim, iputils-ping, nano, procps apache2 mariadb-server mariadb-client php libapache2-mod-php php-gd php-mysql"
+LABEL paquetes="vim, iputils-ping, nano, procps apache2 mariadb-server mariadb-client php libapache2-mod-php php-gd php-mysql php-curl php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip"
 LABEL acceso="usuario: root, password: abc123."
 
 #Copiamos la página de info de php a la raíz del servidor web
@@ -25,9 +25,10 @@ RUN set -x; \
 RUN set -x; \
 	echo "root:$PASS" | chpasswd
 
-#Instalamos paquetes de utilidades
+#Instalamos paquetes necesarios
 RUN set -x; \
-	apt update && apt install -y vim iputils-ping nano procps apache2 mariadb-server mariadb-client php libapache2-mod-php php-gd php-mysql
+	apt update && apt install -y vim iputils-ping nano procps \
+	apache2 mariadb-server mariadb-client php libapache2-mod-php php-gd php-mysql php-curl php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip
 
 #Limpiando
 RUN set -x; \
